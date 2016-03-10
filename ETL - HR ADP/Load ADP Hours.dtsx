@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Load ADP Hours"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{0B4B1637-AE74-419F-9315-5749F17EB39B}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{4400A5E4-914D-4F80-A0E0-FD9F37DF1B21}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -235,7 +235,7 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:FileUsageType="2"
-          DTS:ConnectionString="I:\ETL\ADP\Hours\ProcessedData" />
+          DTS:ConnectionString="\\admin-spfs1\Informatics\ETL\ADP\Hours\ProcessedData" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -277,7 +277,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="I:\ETL\ADP\Hours\UnprocessedData" />
+              Folder="\\admin-spfs1\Informatics\ETL\ADP\Hours\UnprocessedData" />
             <FEFEProperty
               FileSpec="*.csv" />
             <FEFEProperty
@@ -1373,8 +1373,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{4A503808-8C43-432D-ABCF-4A7FE2CDBD6C}"
-          DTS:ObjectName="{4A503808-8C43-432D-ABCF-4A7FE2CDBD6C}"
+          DTS:DTSID="{E92DE03C-CD1C-4A17-A9E1-2B211C4D4427}"
+          DTS:ObjectName="{E92DE03C-CD1C-4A17-A9E1-2B211C4D4427}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::CurrentFile" />
       </DTS:ForEachVariableMappings>
@@ -1425,7 +1425,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="169,204"
+          PanelSize="169,205"
           Size="169,248"
           Id="Package\Foreach Loop Container"
           TopLeft="5.50000000000004,5.5" />
@@ -1470,5 +1470,18 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
