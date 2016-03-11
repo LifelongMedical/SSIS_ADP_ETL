@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Load ADP Hours"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{4400A5E4-914D-4F80-A0E0-FD9F37DF1B21}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{C9C476F4-D702-467C-8120-3136E713968B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
