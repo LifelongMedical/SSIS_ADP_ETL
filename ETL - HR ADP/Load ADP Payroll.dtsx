@@ -11,26 +11,19 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Load ADP Payroll"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{18D6C53C-F8CD-4972-BB13-52A42A761316}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{7F596CEF-141B-440F-AEE8-D40F3E462BDF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[20160218 PR TEST.xls]"
-      DTS:CreationName="FILE"
-      DTS:DTSID="{2626AAF3-2CCB-4A41-948C-0F44B21F82B8}"
-      DTS:ObjectName="20160218 PR TEST.xls">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="\\admin-spfs1\Informatics\ETL\ADP\Payroll\Unprocessed\20160218 PR TEST.xls" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ADP Payroll CSV]"
       DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
       DTS:DTSID="{170B2985-60B0-4793-B773-D53CA03BF395}"
       DTS:ObjectName="ADP Payroll CSV">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CurrentFile]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -39,8 +32,7 @@
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="\\admin-spfs1\Informatics\ETL\ADP\Payroll\Unprocessed\Payroll Extract Only Payroll Data 1.csv">
+          DTS:CodePage="65001">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Home Cost Number - Check"
-              DTS:DTSID="{6C2BF25F-0D89-449B-8FE6-DC252DD4F7B4}"
+              DTS:DTSID="{CF602B9C-B51D-428A-8BA3-C8A499DE4500}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Home Cost Number Desc - Check"
-              DTS:DTSID="{DCED8FDB-CD71-4A6A-B46B-397250B011CF}"
+              DTS:DTSID="{BC6A4A74-9346-4E7C-B762-251159605863}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Cost Number Worked In"
-              DTS:DTSID="{88E86027-936A-4767-9FB2-1375412A372E}"
+              DTS:DTSID="{74C9BC67-CFC9-4CF3-96DB-013B9C44B986}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Cost Number Worked In Desc"
-              DTS:DTSID="{2BC74B1C-2881-493C-8576-F7D7B526A903}"
+              DTS:DTSID="{FE92BB0F-F6A2-436F-953E-24A59629CE30}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Home Department - Check"
-              DTS:DTSID="{CBBC7847-53DB-409B-8EA7-175C7EFE2C6A}"
+              DTS:DTSID="{AA45A9B0-EE78-47B3-80CD-A5D31158AB9C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +86,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Home Department Desc - Check"
-              DTS:DTSID="{0B3A4138-3873-4EB0-B452-4BF1D819376B}"
+              DTS:DTSID="{8EA60050-C8A5-445A-A03F-1B0B8DCDB96A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +95,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Location"
-              DTS:DTSID="{3BBADF32-A223-48C0-9863-23497A60466F}"
+              DTS:DTSID="{CF1666F5-7950-403D-8F28-C23B4ACE4764}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +103,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Location Code"
-              DTS:DTSID="{5D66279A-453A-4AED-A151-6346ECAA0788}"
+              DTS:DTSID="{DA65D67A-54CE-466C-B2A7-5D950331417F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +112,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Hire Source"
-              DTS:DTSID="{A1EEF1F5-14C0-457C-8BFA-D656B0DB19F1}"
+              DTS:DTSID="{F62ECAAA-19A9-4AEF-ACE2-66357122B504}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +121,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Hire Source Code"
-              DTS:DTSID="{75780A58-D917-49E0-A8F4-DC916D58C629}"
+              DTS:DTSID="{8C45D436-0970-45F2-A3B0-C9B959638FD8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -137,7 +129,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Hire Date"
-              DTS:DTSID="{7A84656E-4FC5-4FE5-9B1B-4CE9769B6A27}"
+              DTS:DTSID="{402834A0-DE2E-43B8-B73F-9EFF6B9116E2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -145,7 +137,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Rehire Date"
-              DTS:DTSID="{D8341EAB-780B-4D51-8D3E-C86448F93710}"
+              DTS:DTSID="{8BECE68B-F778-4AC7-BBF3-E866AFF5F7D4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -154,7 +146,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Rehire Status"
-              DTS:DTSID="{93B344AD-2697-401F-BBE2-EF11EFF8652F}"
+              DTS:DTSID="{3384AEA4-07F7-40AF-B73B-19AE5DD09073}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -163,7 +155,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Rehire Status Code"
-              DTS:DTSID="{3899C17D-432D-479E-9D1B-31588F7CE06B}"
+              DTS:DTSID="{35907529-CF51-4532-8DAA-929CECC110AF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -171,7 +163,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Termination Date"
-              DTS:DTSID="{4760E1CE-DB39-4CA4-B30D-9A1F8117F8CF}"
+              DTS:DTSID="{F04A3F2B-A995-4F85-AC34-24B9B2C8DD78}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -180,7 +172,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Termination Reason"
-              DTS:DTSID="{2A3023E2-1057-43B0-B7EA-C0EAC77BE725}"
+              DTS:DTSID="{66464297-7056-44BE-9E96-7399C21DCFD7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -189,7 +181,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Termination Reason Code"
-              DTS:DTSID="{0D1C4599-97DB-40CA-B973-F9CC760CBD1B}"
+              DTS:DTSID="{9E77071C-0FC4-4E1C-826C-FA42ADC8E521}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -198,7 +190,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Manager First Name"
-              DTS:DTSID="{C622C765-E91B-4216-B03F-14DBAE0ACA09}"
+              DTS:DTSID="{B8C9D5F7-4FCF-4B95-B73D-986D62091F83}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -207,7 +199,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Manager Last Name"
-              DTS:DTSID="{FE219110-ACE6-48AB-93B2-3CE7922F9985}"
+              DTS:DTSID="{762AD9E8-1B96-4B7A-BA61-1CC9B19E9D04}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -215,7 +207,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Manager ID"
-              DTS:DTSID="{D4A95807-0245-40EC-B8BF-70A9614AE099}"
+              DTS:DTSID="{BCDA43B4-389A-4C40-8CFC-471870337A4B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -224,7 +216,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Current Status"
-              DTS:DTSID="{052A5F38-470F-4106-B917-39A3E7988761}"
+              DTS:DTSID="{71063F11-14DA-4452-9B8C-4B174010601A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -233,7 +225,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="File Number"
-              DTS:DTSID="{17259032-359A-4ED3-9C8C-5D39253C581F}"
+              DTS:DTSID="{AC246C18-CB79-4C5C-A3A5-5B283A2FABC5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -242,7 +234,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Job Title"
-              DTS:DTSID="{8A750837-5142-42F6-99F3-E6C69E5117BC}"
+              DTS:DTSID="{6F7CE64F-5A35-4C0C-B514-E0A463AFCBCA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -251,7 +243,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Payroll First Name"
-              DTS:DTSID="{72119DE9-FC7E-4B3D-AFEE-CABBE1730EB8}"
+              DTS:DTSID="{4A137D7D-A22B-4C8D-8F14-B7533CDDB7BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -260,7 +252,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Payroll Last Name"
-              DTS:DTSID="{0F141FAF-71C1-485E-A37B-6F0571FCBA17}"
+              DTS:DTSID="{125B5A2E-0C6E-4772-B55C-5260C39C3C8D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -269,7 +261,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Payroll Name"
-              DTS:DTSID="{C8908E26-A71F-472D-8F99-17AF7CFCBB93}"
+              DTS:DTSID="{D05C2DEC-8633-4C0A-9A57-A988B766248A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -277,7 +269,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Birth Date"
-              DTS:DTSID="{038E694A-8A6E-4BF5-AEAA-73FAE6B681EC}"
+              DTS:DTSID="{A7C9B6E3-304A-44C9-AA32-C70429079064}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -286,7 +278,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{2DD51134-CE57-4F77-AF9A-D9049197172B}"
+              DTS:DTSID="{9BF05F19-0CBA-4972-BB3B-011DA8956C48}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -295,7 +287,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="EEO Ethnic Code"
-              DTS:DTSID="{F5FB96C5-3C2A-4953-95ED-2A4BC44C9EEE}"
+              DTS:DTSID="{3327F3B1-4C1E-4D88-85A0-D9E2390ACA49}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -304,7 +296,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Zip Postal Code"
-              DTS:DTSID="{E3F2D097-F949-4D44-8664-DF19D495A820}"
+              DTS:DTSID="{19D671DC-D129-4854-97B3-A93FCEDF5919}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -312,7 +304,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Hourly Rate (001)"
-              DTS:DTSID="{AB6BAD5C-C2E4-4CFF-BBE9-632FA8C80C3E}"
+              DTS:DTSID="{60C1B820-08BF-42D6-8061-EDC655012ABE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -320,7 +312,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Rate Amount"
-              DTS:DTSID="{24ADC8C5-1905-4544-BB82-A2239AA5BCE7}"
+              DTS:DTSID="{A7020FFF-BCFC-438A-BE4E-293C4203A1AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -329,7 +321,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Rate Type Code"
-              DTS:DTSID="{5BC49C81-C716-4E9C-8EDE-968A3928E1C4}"
+              DTS:DTSID="{C254D18F-0E7D-4B7C-84B2-C9CDC4F091A9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -337,7 +329,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Annual Salary"
-              DTS:DTSID="{E1FDED05-3D55-41B5-BA9E-41B2F710E422}"
+              DTS:DTSID="{CE27C079-EE87-4E97-A395-DA082A98F7BA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -346,7 +338,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Data Control"
-              DTS:DTSID="{99545BD2-52A5-44CF-9EEE-45CE24500610}"
+              DTS:DTSID="{A1C2A36D-79B3-402D-8174-49DDAE1CE5F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -354,7 +346,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="FTE"
-              DTS:DTSID="{B7D2A9AD-EA13-4824-AC60-D4048DBB450F}"
+              DTS:DTSID="{C85E74BB-3A60-4A07-AB8F-45D38615825E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -362,7 +354,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Pay Date"
-              DTS:DTSID="{83187DB7-2620-4821-AAC9-33810B5AF34A}"
+              DTS:DTSID="{21EA4C3E-57B1-4E24-9198-46587039B88B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -370,7 +362,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Period Beginning Date"
-              DTS:DTSID="{2C07CFEA-C720-4F94-906D-06826D57F06E}"
+              DTS:DTSID="{F85422D7-3F75-4BD5-9B76-4426802C5E06}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -378,7 +370,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Period End Date - Check"
-              DTS:DTSID="{F2F45AA6-79B1-41A8-8D7E-96DC675EF70A}"
+              DTS:DTSID="{A87E0B40-8198-4B28-94BC-90C402729E1C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -386,7 +378,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Standard Hours"
-              DTS:DTSID="{3A3EDE75-D11D-45F9-AAEC-81DD565B6171}"
+              DTS:DTSID="{44B79A07-4D12-4A5C-AB5D-0E4DD9682C63}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -394,7 +386,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Regular Hours"
-              DTS:DTSID="{9DEC7773-338E-470F-84D1-4CE566D1BF47}"
+              DTS:DTSID="{96960DA1-0321-45C8-9B5B-796EAD86B256}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -402,7 +394,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Overtime Hours"
-              DTS:DTSID="{D926C6C4-1368-407D-A500-6E01D9E6E483}"
+              DTS:DTSID="{0C85C8AC-AEA9-427C-B0E8-011995E5CBA9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -410,7 +402,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="All Other Coded Hours"
-              DTS:DTSID="{704C8F32-73FA-42F1-BBDD-912B7CA4D836}"
+              DTS:DTSID="{8AF767E1-16BD-4644-BB4C-E3A23B16F455}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -418,7 +410,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Regular Earnings"
-              DTS:DTSID="{0E437794-9883-4CC9-B168-C31EE24E91A8}"
+              DTS:DTSID="{C94C56FE-724B-4BD9-BC6E-3C78EEA9D9C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -426,7 +418,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Other Earnings"
-              DTS:DTSID="{40BD612E-1BC7-4909-A8F2-49112BA01957}"
+              DTS:DTSID="{0737E539-D379-4204-9534-250221E5DC09}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -434,7 +426,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Overtime Earnings"
-              DTS:DTSID="{DCDA9363-73F8-476F-B1BB-1AB940AA180D}"
+              DTS:DTSID="{A3B8B855-DD13-4BC8-81AE-34DB706EBE73}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -442,7 +434,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Net Pay"
-              DTS:DTSID="{7832ADF2-1F67-40CB-B8C0-553134BEE687}"
+              DTS:DTSID="{325759AE-EFAA-4FCD-A7CC-1AC62EBDC504}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -450,7 +442,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Gross Pay"
-              DTS:DTSID="{4F55596F-77F3-4126-A30C-297EDED9FE7F}"
+              DTS:DTSID="{74CCE0C3-4F6A-45B9-AE55-529FC61A8DB4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -458,7 +450,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded1"
-              DTS:DTSID="{3F6E97C8-4346-47A7-AE6F-6182D246E4CD}"
+              DTS:DTSID="{DEA40C62-BEDD-4E78-9BF3-151886CC4C0A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -466,7 +458,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded2"
-              DTS:DTSID="{F9B39ED5-0E69-4AFF-9F23-650536D85C46}"
+              DTS:DTSID="{08E6226B-7540-483D-BD09-206B4834A3A3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -474,7 +466,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded3"
-              DTS:DTSID="{CEEF57FF-49C6-48F7-8D49-392C661C59C9}"
+              DTS:DTSID="{80313452-7EF0-4622-87DD-717DF4339B0B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -482,7 +474,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded4"
-              DTS:DTSID="{700548C9-1DAB-4CFF-952D-922410973DAE}"
+              DTS:DTSID="{292843B2-E615-430E-8C32-ADD41D4B381C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -490,7 +482,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded5"
-              DTS:DTSID="{F8F12596-AEE7-41E2-83DF-4DC6337C63FF}"
+              DTS:DTSID="{05C85F92-56A2-4A1A-B8A4-A7C31A550C9B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -498,7 +490,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded6"
-              DTS:DTSID="{9E8A1DAD-3EB5-4C8F-8B42-87632996AB11}"
+              DTS:DTSID="{9483D020-6E9F-4789-AA59-FC42992AA340}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -506,7 +498,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded7"
-              DTS:DTSID="{1D7DA296-999E-4DED-A261-B7CF5AFF33BB}"
+              DTS:DTSID="{C175E38E-6F0B-4759-8860-72572C514906}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -514,7 +506,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded8"
-              DTS:DTSID="{82DE1309-A3CE-4129-9E14-63E46C8F8186}"
+              DTS:DTSID="{C81A9A1E-8361-4532-9F98-468A79BDFDC7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -522,7 +514,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded9"
-              DTS:DTSID="{208FB52A-F039-4A86-85BF-21C337A139E8}"
+              DTS:DTSID="{00FB5D73-1F48-42AA-916F-29246C5499A5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -530,7 +522,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded10"
-              DTS:DTSID="{300D1BCE-303F-40EB-84D8-32AB33897498}"
+              DTS:DTSID="{FA0513AE-1919-413F-97A2-A61DC7469DD4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -538,7 +530,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded11"
-              DTS:DTSID="{81F80CC0-547B-45EF-AB7E-4C291D11B5D8}"
+              DTS:DTSID="{552DE8CD-99C5-453C-B713-931E6323D494}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -546,7 +538,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded12"
-              DTS:DTSID="{ACAEF8DD-0875-4FA5-8C77-31CD37DAC7E7}"
+              DTS:DTSID="{9B20437B-1EE4-4BC3-917E-D6F361511EBE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -554,7 +546,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded13"
-              DTS:DTSID="{8C0AD642-261B-41C7-8698-C836200831F2}"
+              DTS:DTSID="{FCC8F6DC-FB32-42E9-ADB8-CB9E9485E058}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -562,7 +554,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded14"
-              DTS:DTSID="{EBED4E59-ABE0-445C-8FBC-12E728201DAF}"
+              DTS:DTSID="{225C1895-64A2-4A97-86C9-189AAC4928F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -570,7 +562,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded15"
-              DTS:DTSID="{5DF926AA-E4E2-4C39-80EE-50B97FE56911}"
+              DTS:DTSID="{629A8D6B-E374-48E9-9309-2DE691C7E43E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -578,7 +570,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded16"
-              DTS:DTSID="{1B39AF3C-7C28-42E5-B30F-56F6B3CA147C}"
+              DTS:DTSID="{714F5190-16B0-42B4-9CE3-DEB88D4597B1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -586,7 +578,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded17"
-              DTS:DTSID="{E4455E6A-B826-466F-A8B9-6A4CBC8215D4}"
+              DTS:DTSID="{F77FD224-62FC-4F47-AE6A-11CA3B3540A8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -594,7 +586,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded18"
-              DTS:DTSID="{43FDC280-7717-4EDF-AD6C-BDC0F5B27645}"
+              DTS:DTSID="{500739D3-F417-4B33-BC59-74116146514A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -602,7 +594,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded19"
-              DTS:DTSID="{432F8DCB-D388-4F62-9803-55E076ED4B2D}"
+              DTS:DTSID="{48EA04D2-B2B8-4417-9133-1DF77748F143}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -610,7 +602,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded20"
-              DTS:DTSID="{D175EA44-0612-489A-B580-7AD2DD678D39}"
+              DTS:DTSID="{480C8EB8-3B8F-4CE2-B9F4-10D94A35E7AF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -618,7 +610,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded21"
-              DTS:DTSID="{F3323E23-A265-43FA-AB44-CD6E07E4004F}"
+              DTS:DTSID="{7AF37172-406C-4B54-9780-A558C7C4ED5A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -626,7 +618,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded22"
-              DTS:DTSID="{1CBB4562-37FA-4E7E-BD07-7D47D2E7BFED}"
+              DTS:DTSID="{212E63FF-B58D-4146-B0DA-30190E3F1E95}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -634,7 +626,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded23"
-              DTS:DTSID="{7CC43386-D4F9-48AB-92E8-026FACD3BF44}"
+              DTS:DTSID="{AEB099E0-51D0-46F2-A05D-3A499C114EC4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -642,7 +634,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded24"
-              DTS:DTSID="{6A28CA59-710B-4C17-AAF0-5BAE4C001632}"
+              DTS:DTSID="{DA91E2F5-1AF6-4ACD-8995-E1779A8C0181}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -650,7 +642,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded25"
-              DTS:DTSID="{40325674-A156-4D59-B413-7B3EEBE69150}"
+              DTS:DTSID="{FA69DE01-387B-4D75-AB6F-59CD6E01C662}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -658,7 +650,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded26"
-              DTS:DTSID="{6DD77C41-C267-44D4-BE9F-72B9A2D653C4}"
+              DTS:DTSID="{ED5B1152-9DB4-4962-B577-F90165F0AC00}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -666,7 +658,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded27"
-              DTS:DTSID="{51C2E0CD-9AA5-472D-8C8C-68B3C9222A6B}"
+              DTS:DTSID="{14E5BBB7-E094-422F-96BB-AD738A31039E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -674,7 +666,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded28"
-              DTS:DTSID="{F95B1616-D423-4857-BAB4-4F59626390E0}"
+              DTS:DTSID="{CE578B3F-406C-47BE-9A0E-9CF842735282}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -682,7 +674,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded29"
-              DTS:DTSID="{20D9B58D-56FB-4D5B-9B61-56BBE5842A9F}"
+              DTS:DTSID="{FEE817BF-DD47-48C6-ADBE-339F6E909647}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -690,7 +682,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded30"
-              DTS:DTSID="{8B1CBBC4-3053-460D-8654-E4AF2E2B6382}"
+              DTS:DTSID="{CA586192-1DBE-4195-A061-2C43259FF060}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -698,7 +690,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded31"
-              DTS:DTSID="{4CBD3AD9-F2BF-486A-9A17-FC775DB275D6}"
+              DTS:DTSID="{BECC029C-CB58-433D-9249-91E0B9C0D8B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -706,7 +698,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded32"
-              DTS:DTSID="{05532361-8DFE-493B-9CE9-8F92ECEB783E}"
+              DTS:DTSID="{67224767-744E-4F28-8452-FD7D296E414D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -714,7 +706,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Hours Coded33"
-              DTS:DTSID="{5B70380A-D567-4A77-B67B-B2E33A0DE49C}"
+              DTS:DTSID="{DE6E0A39-27AA-4A4E-836E-81F2363AB0F3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -722,7 +714,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded1"
-              DTS:DTSID="{B9CA89FC-3E3D-4D17-AF58-8B093D0D70ED}"
+              DTS:DTSID="{A5998F1E-2BBD-447E-88FA-C023421A44B0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -730,7 +722,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded2"
-              DTS:DTSID="{B4FA9E84-E99A-4F46-9697-53CA2532DDF1}"
+              DTS:DTSID="{62BA370C-DE08-463F-A441-401F031DFECF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -738,7 +730,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded3"
-              DTS:DTSID="{0A48A347-33C6-4D2D-AE24-4665CB70AA98}"
+              DTS:DTSID="{93E2E2B4-6134-4239-8660-9AFB441CA64D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -746,7 +738,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded4"
-              DTS:DTSID="{5F03E28D-9509-4DF5-9062-3097E1630026}"
+              DTS:DTSID="{6AA501FF-E387-4061-918A-3CFAC1E425BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -754,7 +746,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded5"
-              DTS:DTSID="{4F50BFB3-662A-48B7-B7BB-C0894BDEB63B}"
+              DTS:DTSID="{C64ABC20-0058-4E67-9E1C-AB57F45D5680}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -762,7 +754,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded6"
-              DTS:DTSID="{680A1617-EB2F-4243-BF7D-793871BD9D3C}"
+              DTS:DTSID="{EBDE00C3-46E6-46A0-8AE4-D17F016A54AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -770,7 +762,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded7"
-              DTS:DTSID="{68DD6284-CABE-40AC-A463-FF7FDFE2A4E7}"
+              DTS:DTSID="{4A20CB0A-C2C2-49E7-816B-943CFA88F770}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -778,7 +770,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded8"
-              DTS:DTSID="{7F112AEC-43A1-49A1-8878-EE225B8E76DB}"
+              DTS:DTSID="{45901E61-BF29-46C5-8858-1FAAB8AF6039}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -786,7 +778,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded9"
-              DTS:DTSID="{D5B9BCD6-197A-4119-A38D-089A67E08A42}"
+              DTS:DTSID="{939A67C9-9551-426B-9BAF-568AEB76D15F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -794,7 +786,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded10"
-              DTS:DTSID="{DEA475AD-9925-45E7-9B70-D264A88B8F9F}"
+              DTS:DTSID="{5367F2AB-5694-45CB-B58A-45A9ADC181BA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -802,7 +794,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded11"
-              DTS:DTSID="{68417F37-21DD-41AE-AF53-E222CD7B1150}"
+              DTS:DTSID="{F1E746E7-11C6-4DF5-8B9B-D4A7B97511A7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -810,7 +802,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded12"
-              DTS:DTSID="{BE53D379-5A26-4F41-BA62-C7AD7BC8D0DB}"
+              DTS:DTSID="{C9FF8C85-6BE0-44BC-94A1-AB7E861A53FC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -818,7 +810,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded13"
-              DTS:DTSID="{A3AD82CD-D6F0-4E17-8C9F-DBBBAD1939F7}"
+              DTS:DTSID="{939E4C62-492F-4DB5-AAD9-52BB31F7B929}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -826,7 +818,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded14"
-              DTS:DTSID="{CCD963CA-283B-4525-863D-14CF6966393A}"
+              DTS:DTSID="{E6FAF601-B018-40C6-A44F-31AA70004219}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -834,7 +826,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded15"
-              DTS:DTSID="{845D37AD-7ADD-4517-A61B-6BE6281A8133}"
+              DTS:DTSID="{6A527D53-4E9E-4D1B-9C86-1AEF3C088C6F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -842,7 +834,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded16"
-              DTS:DTSID="{98A9B340-027C-4BEB-98AC-4F3201383216}"
+              DTS:DTSID="{39529186-595C-4994-AE89-082043E07BD8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -850,7 +842,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded17"
-              DTS:DTSID="{7C91352F-101A-47D2-AD12-54B1149BCE06}"
+              DTS:DTSID="{3C3E7417-04E9-4FAE-8354-23107A6BE0ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -858,7 +850,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded18"
-              DTS:DTSID="{5410191F-0009-4A99-B1D9-B83036723F9C}"
+              DTS:DTSID="{0049FD79-5E5F-483E-9B79-8AA7839F05E7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -866,7 +858,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded19"
-              DTS:DTSID="{99044143-1B76-4ED1-8BEF-FF8E79C94E66}"
+              DTS:DTSID="{A424D4D8-C014-4177-AA51-1720C484EF8A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -874,7 +866,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded20"
-              DTS:DTSID="{FF8C4278-A9B1-41B3-B24D-8CDF89285726}"
+              DTS:DTSID="{B6D5EF7A-49F9-4404-B36C-0BFF9C8AC5CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -882,7 +874,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded21"
-              DTS:DTSID="{D2B66A42-2CA2-4BC7-B0D0-AB8069EE49A0}"
+              DTS:DTSID="{B2C54467-22DA-4FB2-B901-478B4F817F06}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -890,7 +882,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded22"
-              DTS:DTSID="{254E80C1-F4A7-4FAF-BBD9-73F875237ABC}"
+              DTS:DTSID="{4CECCDE1-107D-4A3B-9205-4E5403800A77}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -898,7 +890,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded23"
-              DTS:DTSID="{BB2C663B-F6EB-40EC-A8CA-3D91EBF383DF}"
+              DTS:DTSID="{0BC8FFB1-5EAA-4AFA-830E-1B798FF3A610}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -906,7 +898,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded24"
-              DTS:DTSID="{968D7A86-5159-4451-9BD3-73C4D8F488C0}"
+              DTS:DTSID="{585A152A-3CF3-4C9B-A20E-1595F3732608}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -914,7 +906,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded25"
-              DTS:DTSID="{FCEE04E3-FA51-452F-AA67-1A1ADBE3099C}"
+              DTS:DTSID="{1969A032-FF07-4AB7-B8D0-7550174CA794}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -922,7 +914,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded26"
-              DTS:DTSID="{B775EEC8-9416-4B63-A782-BA8D8D920886}"
+              DTS:DTSID="{7A0D02FF-ACDD-4EF3-AFD8-56299E15ACAD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -930,7 +922,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded27"
-              DTS:DTSID="{A1C5984B-6F11-4B1E-AA71-6D1525C1A8A6}"
+              DTS:DTSID="{184430B4-3FC2-4B12-9FA8-BFEDAC4A7E94}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -938,7 +930,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded28"
-              DTS:DTSID="{002B6456-ACAF-4BC7-88E1-AED595ECDE0D}"
+              DTS:DTSID="{093DCAE8-F194-44E3-9C58-A8C182975E51}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -946,7 +938,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded29"
-              DTS:DTSID="{48FECC03-7D6F-438D-912C-EB1B8AF3AE60}"
+              DTS:DTSID="{2B92CBF9-A90F-49A9-8B7C-65389F8F80D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -954,7 +946,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded30"
-              DTS:DTSID="{3E464261-E0B4-46E8-94CF-DCA7B876F0D0}"
+              DTS:DTSID="{E44478C6-E344-4811-97BC-45EFECBC2DA8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -962,7 +954,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded31"
-              DTS:DTSID="{6CFFB172-8CC3-453E-8923-E577938747C8}"
+              DTS:DTSID="{7984DBA5-38BC-4E7F-B188-0EB79A59BE5F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -970,7 +962,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded32"
-              DTS:DTSID="{57CF2C97-9378-4D2E-8E1D-99D145C2CE54}"
+              DTS:DTSID="{1FF5936C-1D2B-4F79-BB4C-0A5CD5F1334A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -978,7 +970,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded33"
-              DTS:DTSID="{52B4C3EB-1F04-4394-891A-3099DD4728AC}"
+              DTS:DTSID="{D2146CB8-52C2-4BC0-BA19-0CC409A046B3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -986,7 +978,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded34"
-              DTS:DTSID="{4DC86331-B6ED-4F50-9D68-A2897EFC3F66}"
+              DTS:DTSID="{20B342E1-4B22-452B-B1E1-32B7E201910D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -994,7 +986,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded35"
-              DTS:DTSID="{B9AE067D-41A1-4145-9850-A2E0F8CC9EA3}"
+              DTS:DTSID="{5D8D3F0F-7353-4D09-A7C8-65B9AE9703AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1002,7 +994,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded36"
-              DTS:DTSID="{B67AE4C6-7CB8-419F-B55A-1EDB2E9C3611}"
+              DTS:DTSID="{DAA20E36-CB38-4E2E-AF6C-D1BFE8C63502}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1010,7 +1002,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded37"
-              DTS:DTSID="{A47D2922-702C-4F8E-AA37-9AB133A0F443}"
+              DTS:DTSID="{A6F1E4D4-B68B-4DD0-B284-E97244F5F473}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1018,7 +1010,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded38"
-              DTS:DTSID="{C852E3E5-BF2C-4701-99B3-2272CCC0CF95}"
+              DTS:DTSID="{C7A30AF2-F3C5-408F-8664-509633904A78}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1026,7 +1018,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded39"
-              DTS:DTSID="{CE6CE203-A592-49B1-9B6E-997B06DCA7B6}"
+              DTS:DTSID="{DDDF3248-6F3C-4605-AAEB-7D2A7AB0726F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1034,7 +1026,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded40"
-              DTS:DTSID="{CAD395DA-F10C-4235-B559-85CA69246C44}"
+              DTS:DTSID="{7D01819C-5FD3-408D-8202-675F352705E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1042,7 +1034,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded41"
-              DTS:DTSID="{391C62B7-66B1-418E-8037-74B64FBA3020}"
+              DTS:DTSID="{861E9BF7-2716-4D05-A80D-4B17AFD6D829}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1050,7 +1042,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded42"
-              DTS:DTSID="{AC4DCF26-A6C6-4591-A2AF-C0CE98807856}"
+              DTS:DTSID="{0245FD53-8508-48D9-9B5C-38B9983A6A80}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1058,7 +1050,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded43"
-              DTS:DTSID="{B7E5DF8C-174E-4080-9307-B353F0CE7BB4}"
+              DTS:DTSID="{F24D4752-480A-4350-96B0-72DB84B18F2E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1066,7 +1058,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded45"
-              DTS:DTSID="{E32C34DA-4640-4377-ABC8-EC4E71D206C0}"
+              DTS:DTSID="{71DEBFA9-2D13-4C49-A33B-49AEAFE1EEEA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1074,7 +1066,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded44"
-              DTS:DTSID="{B2B16A39-CABB-43BF-85C7-4523284B1A90}"
+              DTS:DTSID="{758AF175-55DA-4B8F-A772-972369822EF1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1082,7 +1074,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded46"
-              DTS:DTSID="{614A43A5-F7E2-4DB2-804F-091B2F814AAD}"
+              DTS:DTSID="{917908D3-9D75-43AE-948E-81E31F9D6D8F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1090,7 +1082,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded47"
-              DTS:DTSID="{FEAE25F0-7CDE-4309-88A9-93602D71273D}"
+              DTS:DTSID="{A5D80B91-A67E-49D2-9BFE-826BDFA6AF16}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1098,7 +1090,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded48"
-              DTS:DTSID="{DFBAFAB6-1EB4-4A30-B0C1-932BCA7CB4DA}"
+              DTS:DTSID="{EAF87B0A-CDF7-4857-940E-07DC6F8EADA4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1106,7 +1098,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded49"
-              DTS:DTSID="{DB6E3629-8DEF-46D2-8EA7-991E9B1BF564}"
+              DTS:DTSID="{9D5B0CC5-E492-4379-8B95-8B102F085949}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1114,7 +1106,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded50"
-              DTS:DTSID="{1B8256E4-6535-4638-832E-B00C8CB16EA7}"
+              DTS:DTSID="{2AC688F6-4132-44AD-BA58-9C57A389C451}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1122,7 +1114,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded51"
-              DTS:DTSID="{66B61FB9-4F12-49CE-BFED-F6861B384AA4}"
+              DTS:DTSID="{1E2C2FF5-14C7-48CE-A828-11019A8EC274}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1130,7 +1122,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded52"
-              DTS:DTSID="{BED78970-42E0-480A-8443-B08DA510BF88}"
+              DTS:DTSID="{6DFF38EC-EEE2-41EA-8FE8-1D372D72BD1A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1138,7 +1130,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded53"
-              DTS:DTSID="{981FB1BC-5E0E-4827-BE53-2F43B34564C4}"
+              DTS:DTSID="{02F97695-8EBE-4C87-984B-16B6B3C171EB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1146,7 +1138,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded54"
-              DTS:DTSID="{B69BD194-6101-4BA3-BEC2-DE7F631DD15D}"
+              DTS:DTSID="{D990C737-5DEA-4FDB-96E6-720D902913A9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1154,7 +1146,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded55"
-              DTS:DTSID="{50A65927-1FCD-4305-9C5E-9894721B974B}"
+              DTS:DTSID="{9FDDC3B5-E4B9-4B29-B0CB-1DF65B4F53BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1162,7 +1154,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded56"
-              DTS:DTSID="{21652BF8-4595-445B-947F-F1807940D582}"
+              DTS:DTSID="{0651A403-652A-4FC0-9FC8-208C70756628}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1170,7 +1162,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded57"
-              DTS:DTSID="{CFC88280-605C-4434-BE7A-3B45428556CB}"
+              DTS:DTSID="{E1C471BF-D29A-4A2D-A2D8-72CD93BBF1C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1178,7 +1170,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded58"
-              DTS:DTSID="{CD8F8D53-5764-49E1-BFFF-6988759FC582}"
+              DTS:DTSID="{FD7A886A-6783-42AC-B01A-36533C121BAF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1186,7 +1178,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_Earnings Coded59"
-              DTS:DTSID="{543C0E2F-647C-454E-B9EE-463CC3C0AE35}"
+              DTS:DTSID="{6863C191-4E1D-4D28-9BAE-6D90C5869B8B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1194,7 +1186,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Allowed1"
-              DTS:DTSID="{CF8F859C-3D9E-4CBA-A068-599370896276}"
+              DTS:DTSID="{A50E4147-0EF6-41CD-AAF8-D1DC4980400E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1202,7 +1194,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Allowed2"
-              DTS:DTSID="{88A14976-C659-4904-B373-7471CBDF62EF}"
+              DTS:DTSID="{BF9A646E-7783-4224-A8D7-EE4EE60D3D11}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1210,7 +1202,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Allowed3"
-              DTS:DTSID="{F8E31FE5-7BDD-4422-ABA1-616A0E2B4FA8}"
+              DTS:DTSID="{B3679F8F-2727-444C-BB1A-C5BA3B49387D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1218,7 +1210,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Allowed4"
-              DTS:DTSID="{A72F766F-474D-4066-A060-87EC73A85EBC}"
+              DTS:DTSID="{1D09904F-7817-486E-859B-31FE66BF888D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1226,7 +1218,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Allowed5"
-              DTS:DTSID="{ED43DCB0-068A-4BBB-87A8-CAC7DB4336E1}"
+              DTS:DTSID="{CD2C73E1-CA63-4F11-BFB2-EC97DB3A60FC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1234,7 +1226,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Taken1"
-              DTS:DTSID="{C34B2A9A-F22C-47E4-BDE5-E0B755AEABDB}"
+              DTS:DTSID="{F4637545-FE7A-444E-9892-726B1CCAC40A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1242,7 +1234,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Taken2"
-              DTS:DTSID="{CEAB9660-60DF-47DF-A304-84806191FF8F}"
+              DTS:DTSID="{08FCDC58-723F-41A8-B7D2-7874E7425734}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1250,7 +1242,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Taken3"
-              DTS:DTSID="{ACF888F7-FE47-4D41-BC28-CA357F59A7BB}"
+              DTS:DTSID="{C23F595C-C0D4-4AE1-8A73-2D0A8DE53DDD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1258,7 +1250,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Taken4"
-              DTS:DTSID="{63BBB006-ACE1-4A57-8162-900B3923AEFB}"
+              DTS:DTSID="{0BE4C7D2-59C5-43EB-9ADB-8C495FD33104}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1266,7 +1258,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="_To_Date Taken5"
-              DTS:DTSID="{84346A9C-B1F0-4EE4-B624-96B5F4A47232}"
+              DTS:DTSID="{B3A3EEAF-6278-4851-9F1B-143BCAE3E926}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1316,6 +1308,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{01B153BF-2484-4A1E-8E5A-8284AF4EED09}"
+      DTS:ObjectName="CurrentFile">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -1326,6 +1330,25 @@
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{15AB54F5-893B-4386-A8F8-6E8EF6EE0D47}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{730BEAC3-FE9F-4A18-8E4C-9769DDC66F1B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8">FileName</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -1344,9 +1367,9 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="\\admin-spfs1\Informatics\ETL\ADP\Payroll\Unprocessed" />
+              Folder="\\admin-spfs1\Informatics\ETL\ADP\Payroll\Unprocessed\" />
             <FEFEProperty
-              FileSpec="*.xls" />
+              FileSpec="*.csv" />
             <FEFEProperty
               FileNameRetrievalType="0" />
             <FEFEProperty
@@ -1370,6 +1393,7 @@
           <DTS:ObjectData>
             <FileSystemData
               TaskOperationType="MoveFile"
+              TaskSourcePath="{170B2985-60B0-4793-B773-D53CA03BF395}"
               TaskDestinationPath="{1388151c-848a-49df-b302-40c3d6505cfa}" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -5120,7 +5144,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[adp_payroll_TEST]</property>
+                      name="OpenRowset">[etl].[data_adp_payroll_v3]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -6095,13 +6119,6 @@
                           cachedName="_To_Date Taken5"
                           externalMetadataColumnId="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server.Inputs[OLE DB Destination Input].ExternalColumns[_To_Date Taken5]"
                           lineageId="Package\For Each File in Unprocessed Folder\Process Payroll Data\ADP Export Files.Outputs[Flat File Source Output].Columns[_To_Date Taken5]" />
-                        <inputColumn
-                          refId="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server.Inputs[OLE DB Destination Input].Columns[Zip Postal Code]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="Zip Postal Code"
-                          externalMetadataColumnId="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server.Inputs[OLE DB Destination Input].ExternalColumns[Zip/Postal Code]"
-                          lineageId="Package\For Each File in Unprocessed Folder\Process Payroll Data\ADP Export Files.Outputs[Flat File Source Output].Columns[Zip Postal Code]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6246,11 +6263,6 @@
                           dataType="wstr"
                           length="255"
                           name="EEO Ethnic Code" />
-                        <externalMetadataColumn
-                          refId="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server.Inputs[OLE DB Destination Input].ExternalColumns[Zip/Postal Code]"
-                          dataType="wstr"
-                          length="255"
-                          name="Zip/Postal Code" />
                         <externalMetadataColumn
                           refId="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server.Inputs[OLE DB Destination Input].ExternalColumns[Hourly Rate (001)]"
                           dataType="numeric"
@@ -6963,6 +6975,11 @@
                           name="_To_Date Taken5"
                           precision="38"
                           scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server.Inputs[OLE DB Destination Input].ExternalColumns[Zip/Postal Code]"
+                          dataType="wstr"
+                          length="255"
+                          name="Zip/Postal Code" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -7016,8 +7033,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{10B24A40-8678-48F3-A03F-A0C1ACB555F9}"
-          DTS:ObjectName="{10B24A40-8678-48F3-A03F-A0C1ACB555F9}"
+          DTS:DTSID="{5BBF6324-1965-488D-9CD3-939ED84EB44B}"
+          DTS:ObjectName="{5BBF6324-1965-488D-9CD3-939ED84EB44B}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::CurrentFile" />
       </DTS:ForEachVariableMappings>
@@ -7036,39 +7053,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175,42"
-          Id="Package\For Each File in Unprocessed Folder\Process Payroll Data"
-          TopLeft="9.00000000000001,5.5" />
-        <NodeLayout
           Size="158,42"
           Id="Package\For Each File in Unprocessed Folder\File System Task"
-          TopLeft="27,117" />
+          TopLeft="29,113" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\For Each File in Unprocessed Folder\Process Payroll Data"
+          TopLeft="10,4.5" />
         <EdgeLayout
           Id="Package\For Each File in Unprocessed Folder.PrecedenceConstraints[Constraint]"
-          TopLeft="96.5,47.5">
+          TopLeft="97.5,46.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.49999999999999,69.5"
+              EndConnector="10.5,66.5"
               Start="0,0"
-              End="9.49999999999999,62">
+              End="10.5,59">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.75" />
+                    End="0,29.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.75"
-                    Point2="0,34.75"
-                    Point3="4,34.75" />
+                    Point1="0,29.25"
+                    Point2="0,33.25"
+                    Point3="4,33.25" />
                   <mssgle:LineSegment
-                    End="5.49999999999999,34.75" />
+                    End="6.5,33.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.49999999999999,34.75"
-                    Point2="9.49999999999999,34.75"
-                    Point3="9.49999999999999,38.75" />
+                    Point1="6.5,33.25"
+                    Point2="10.5,33.25"
+                    Point3="10.5,37.25" />
                   <mssgle:LineSegment
-                    End="9.49999999999999,62" />
+                    End="10.5,59" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7080,8 +7097,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="261,230"
-          Size="261,273"
+          PanelSize="270,230"
+          Size="270,273"
           Id="Package\For Each File in Unprocessed Folder"
           TopLeft="6.50000000000006,6.5" />
       </GraphLayout>
@@ -7093,22 +7110,22 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="163,42"
+          Id="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server"
+          TopLeft="218,322" />
+        <NodeLayout
           Size="156,42"
           Id="Package\For Each File in Unprocessed Folder\Process Payroll Data\ADP Export Files"
           TopLeft="155,159" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\For Each File in Unprocessed Folder\Process Payroll Data\Production Server"
-          TopLeft="217,322" />
         <EdgeLayout
           Id="Package\For Each File in Unprocessed Folder\Process Payroll Data.Paths[Flat File Source Output]"
           TopLeft="233,201">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.5,121"
+              EndConnector="66.5,121"
               Start="0,0"
-              End="65.5,113.5">
+              End="66.5,113.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -7119,13 +7136,13 @@
                     Point2="0,60.5"
                     Point3="4,60.5" />
                   <mssgle:LineSegment
-                    End="61.5,60.5" />
+                    End="62.5,60.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.5,60.5"
-                    Point2="65.5,60.5"
-                    Point3="65.5,64.5" />
+                    Point1="62.5,60.5"
+                    Point2="66.5,60.5"
+                    Point3="66.5,64.5" />
                   <mssgle:LineSegment
-                    End="65.5,113.5" />
+                    End="66.5,113.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
